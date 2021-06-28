@@ -61,17 +61,7 @@ subscribe(){
 **NB:**  This component appears to somewhat buck recent trends in thought as it relates to best practice flow of data (maybe?  I'm not really sure).  
 
 
-## Supported attributes:
+## Reference
 
-from-host
-from-closest
-from-upsearch
+WIP
 
-observe-prop
-
-parse-val-as
-
-val => if need subobject
-init-val=> if need subobject
-
-closest property means don't use shadow to get container.
