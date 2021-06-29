@@ -140,7 +140,7 @@ const propDefMap = {
     from: strProp1,
     prop: strProp1,
     as: strProp1,
-    lastVal: objProp3,
+    lastVal: objProp2,
     observeProp: strProp2,
     hostToObserve: objProp2,
     //mutateEvents: objProp4,
