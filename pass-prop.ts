@@ -96,7 +96,7 @@ const onHostToObserve = ({hostToObserve, observeProp, self}: P) => {
     self.subscribe(self);
 };
 
-const onLastVal = ({lastVal, to: echoTo, careOf, from, prop, as,  self}: P) => {
+const onLastVal = ({lastVal, to, echoTo, careOf, from, prop, as,  self}: P) => {
     passVal(lastVal, self, echoTo, careOf, self.m, from, prop, as);
 };
 
