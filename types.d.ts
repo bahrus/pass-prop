@@ -34,5 +34,4 @@ export interface IPassPropProps extends PDToFrom {
     //mutateEvents?: string[] | undefined;
     subscribe(self: IPassPropProps): void;
 
-    echoTo?: string;
 }
