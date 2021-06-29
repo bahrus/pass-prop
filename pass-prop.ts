@@ -97,6 +97,7 @@ const onHostToObserve = ({hostToObserve, observeProp, self}: P) => {
 };
 
 const onLastVal = ({lastVal, to, careOf, from, prop, as,  self}: P) => {
+    
     passVal(lastVal, self, to, careOf, self.m, from, prop, as);
 };
 

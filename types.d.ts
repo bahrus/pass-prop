@@ -34,4 +34,9 @@ export interface IPassPropProps extends PDToFrom {
     //mutateEvents?: string[] | undefined;
     subscribe(self: IPassPropProps): void;
 
+    /**
+     * Useful for hiding element if property is falsy [TODO]
+     */
+    asFalsyAttr?: string;
+
 }
