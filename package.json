@@ -10,10 +10,13 @@
   "module": "pass-prop.js",
   "exports": {
     ".": "./pass-prop.js",
-    "./pass-prop.js": "./pass-prop.js"
+    "./pass-prop.js": "./pass-prop.js",
+    "./p-p.js": "./p-p.js",
+    "./pass-prop-ext.js": "./pass-prop-ext.js",
+    "./p-p-x.js": "./p-p-x.js"
   },
   "files": [
-    "proxy-*.*",
+    "p*.*",
     "types.d.ts",
     "custom-elements.json"
   ],
