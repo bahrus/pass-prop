@@ -7,4 +7,4 @@ import {xc} from 'xtal-element/lib/XtalCore.js';
 export class PPX extends PassPropExt{
     static is = 'p-p-x';
 }
-xc.define('p-p-x');
+xc.define(PPX);
