@@ -19,8 +19,17 @@ import { MutObs } from 'mut-obs/mut-obs.js';
  */
 export class PassProp extends HTMLElement {
     static is = 'pass-prop';
+    /**
+     * @private
+     */
     propActions = propActions;
+    /**
+     * @private
+     */
     self = this;
+    /**
+     * @private
+     */
     reactor = new xc.Rx(this);
     subscribe(self) {
         self.hostToObserve.reactor.subscribe(new Set([self.observeProp]), rs => {

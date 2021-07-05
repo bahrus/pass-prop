@@ -22,8 +22,17 @@ import {PassPropProps} from './types.d.js';
  */
 export class PassProp extends HTMLElement implements ReactiveSurface{
     static is = 'pass-prop';
+    /**
+     * @private
+     */
     propActions = propActions;
+    /**
+     * @private
+     */
     self =  this;
+    /**
+     * @private
+     */
     reactor: IReactor = new xc.Rx(this);
 
     subscribe(self: PassPropProps){
