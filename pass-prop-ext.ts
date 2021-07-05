@@ -1,5 +1,5 @@
 import {PassProp} from './pass-prop.js';
-import {xc} from 'xtal-element/lib/XtalCore.js';
+import {xc, PropDef, PropDefMap} from 'xtal-element/lib/XtalCore.js';
 import {PassPropExtProps} from './types.d.js';
 import {jsonPath} from 'jsonpathesm/JSONPath.js';
 
@@ -42,5 +42,19 @@ export class PassPropExt extends PassProp{
     }
 }
 export interface PassPropExt extends PassPropExtProps{}
-
+const strProp: PropDef = {
+    dry: true,
+    type: String,
+};
+const objProp: PropDef = {
+    dry: true,
+    type: Object
+}
+const propDefMap: PropDefMap<PassPropExt> = {
+    valFilter: strProp,
+    valFilterScriptId: strProp,
+    valFilterScriptPropPath: strProp,
+};
+const slicedPropDefs = xc.getSlicedPropDefs(propDefMap);
+xc.letThereBeProps(PassPropExt, slicedPropDefs, 'onPropChange');
 xc.define(PassPropExt);

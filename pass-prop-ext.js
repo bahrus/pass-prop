@@ -40,4 +40,19 @@ export class PassPropExt extends PassProp {
         return newVal;
     }
 }
+const strProp = {
+    dry: true,
+    type: String,
+};
+const objProp = {
+    dry: true,
+    type: Object
+};
+const propDefMap = {
+    valFilter: strProp,
+    valFilterScriptId: strProp,
+    valFilterScriptPropPath: strProp,
+};
+const slicedPropDefs = xc.getSlicedPropDefs(propDefMap);
+xc.letThereBeProps(PassPropExt, slicedPropDefs, 'onPropChange');
 xc.define(PassPropExt);
