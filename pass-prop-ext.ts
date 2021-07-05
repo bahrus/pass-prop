@@ -40,6 +40,10 @@ export class PassPropExt extends PassProp{
         }
         return newVal;
     }
+    override connectedCallback(){
+        super.connectedCallback();
+        xc.mergeProps(this, slicedPropDefs);
+    }
 }
 export interface PassPropExt extends PassPropExtProps{}
 const strProp: PropDef = {

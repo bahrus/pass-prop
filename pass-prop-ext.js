@@ -39,6 +39,10 @@ export class PassPropExt extends PassProp {
         }
         return newVal;
     }
+    connectedCallback() {
+        super.connectedCallback();
+        xc.mergeProps(this, slicedPropDefs);
+    }
 }
 const strProp = {
     dry: true,
