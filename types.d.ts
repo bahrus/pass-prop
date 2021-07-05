@@ -1,13 +1,14 @@
 import {PDToFrom} from 'pass-down/types.js';
 import {PassProp} from './pass-prop.js';
 export interface IPassPropProps extends PDToFrom {
-    self: IPassPropProps;
+
     /**
-     * Observe property from ShadowRoot Host
+     * @prop fromHost {boolean} Observe property from ShadowRoot Host
+     * @attr from-host
      */
     fromHost?: boolean,
     /**
-     * Observe property from parent element
+     * @prop fromParent {boolean} Observe property from parent element
      * @attr from-parent
      */
     fromParent?: boolean,
@@ -20,7 +21,7 @@ export interface IPassPropProps extends PDToFrom {
      * Search up the DOM Node Tree for an element matching this css selector
      * @attr from-upsearch
      */
-    fromUpsearch?: string | undefined;
+    fromUpsearch?: string;
     /**
      * Name of property to observe
      * @attr observe-prop
@@ -31,9 +32,6 @@ export interface IPassPropProps extends PDToFrom {
      * But it can be passed in.
      */
     hostToObserve?: Element;
-    //mutateEvents?: string[] | undefined;
-    subscribe(self: IPassPropProps): void;
-
     /**
      * Useful for hiding element if property is falsy [TODO]
      */

@@ -4,6 +4,11 @@ import { passVal } from 'on-to-me/on-to-me.js';
 import { addDefaultMutObs } from 'pass-down/pdUtils.js';
 import 'mut-obs/mut-obs.js';
 import { MutObs } from 'mut-obs/mut-obs.js';
+/**
+ * @tag pass-prop
+ * @prop {boolean} fromHost  Observe property from ShadowRoot Host
+ * @attr {boolean} from-host Observe property from ShadowRoot Host
+ */
 export class PassProp extends HTMLElement {
     static is = 'pass-prop';
     propActions = propActions;

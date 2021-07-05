@@ -7,7 +7,11 @@ import  'mut-obs/mut-obs.js';
 import {MutObs} from 'mut-obs/mut-obs.js';
 import {IPassPropProps} from './types.d.js';
 
-
+/**
+ * @tag pass-prop
+ * @prop {boolean} fromHost  Observe property from ShadowRoot Host
+ * @attr {boolean} from-host Observe property from ShadowRoot Host
+ */
 export class PassProp extends HTMLElement implements ReactiveSurface, IPassPropProps{
     static is = 'pass-prop';
     propActions = propActions;
