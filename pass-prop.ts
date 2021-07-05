@@ -5,7 +5,7 @@ import {addDefaultMutObs, handleValChange, attachMutationEventHandler} from 'pas
 
 import  'mut-obs/mut-obs.js';
 import {MutObs} from 'mut-obs/mut-obs.js';
-import {IPassPropProps} from './types.d.js';
+import {PassPropProps} from './types.d.js';
 
 /**
  * @tag pass-prop
@@ -20,13 +20,13 @@ import {IPassPropProps} from './types.d.js';
  * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
  * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
  */
-export class PassProp extends HTMLElement implements ReactiveSurface, IPassPropProps{
+export class PassProp extends HTMLElement implements ReactiveSurface{
     static is = 'pass-prop';
     propActions = propActions;
     self =  this;
     reactor: IReactor = new xc.Rx(this);
 
-    subscribe(self: IPassPropProps){
+    subscribe(self: PassPropProps){
         (<ReactiveSurface>self.hostToObserve!).reactor!.subscribe(new Set([self.observeProp!]), rs => {
             const currentVal = (<any>self.hostToObserve!)[self.observeProp!];
             setVal(this, currentVal);
@@ -46,6 +46,8 @@ export class PassProp extends HTMLElement implements ReactiveSurface, IPassPropP
     onPropChange(n: string, propDef: PropDef, nv: any){
         this.reactor.addToQueue(propDef, nv);
     }
+
+    filterVal(val: any){return val;}
 }
 
 export function upSearch(el: Element, css: string){
@@ -57,7 +59,9 @@ export function upSearch(el: Element, css: string){
     return upEl;
 }
 
-type P = IPassPropProps;
+export interface PassProp extends PassPropProps{}
+
+type P = PassProp;
 
 const onFromRootNodeHost = ({fromHost, self}: P) => {
     const rn = self.getRootNode();
@@ -95,9 +99,9 @@ const onFromParentOrHost = ({fromParentOrHost, self}: P) => {
 function setVal(self: P, currentVal: any){
     if(currentVal !== undefined){
         if(typeof currentVal === 'object'){
-            self.lastVal = structuralClone(currentVal);
+            self.lastVal = self.filterVal(structuralClone(currentVal));
         }else{
-            self.lastVal = currentVal;
+            self.lastVal = self.filterVal(currentVal);
         }
     }
 }
@@ -188,13 +192,3 @@ declare global {
     }
 }
 
-class PP extends PassProp{
-    static is = 'p-p';
-}
-xc.define(PP);
-
-declare global {
-    interface HTMLElementTagNameMap {
-        'p-p': PP;
-    }
-}

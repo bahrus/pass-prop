@@ -41,6 +41,7 @@ export class PassProp extends HTMLElement {
     onPropChange(n, propDef, nv) {
         this.reactor.addToQueue(propDef, nv);
     }
+    filterVal(val) { return val; }
 }
 export function upSearch(el, css) {
     if (css === 'parentElement')
@@ -84,10 +85,10 @@ const onFromParentOrHost = ({ fromParentOrHost, self }) => {
 function setVal(self, currentVal) {
     if (currentVal !== undefined) {
         if (typeof currentVal === 'object') {
-            self.lastVal = structuralClone(currentVal);
+            self.lastVal = self.filterVal(structuralClone(currentVal));
         }
         else {
-            self.lastVal = currentVal;
+            self.lastVal = self.filterVal(currentVal);
         }
     }
 }
@@ -164,7 +165,3 @@ const propDefMap = {
 const slicedPropDefs = xc.getSlicedPropDefs(propDefMap);
 xc.letThereBeProps(PassProp, slicedPropDefs, 'onPropChange');
 xc.define(PassProp);
-class PP extends PassProp {
-    static is = 'p-p';
-}
-xc.define(PP);

@@ -1,6 +1,6 @@
 import {PDToFrom} from 'pass-down/types.js';
 import {PassProp} from './pass-prop.js';
-export interface IPassPropProps extends PDToFrom {
+export interface PassPropProps extends PDToFrom {
 
     /**
     * @prop {boolean} fromHost  Observe property from ShadowRoot Host
@@ -38,4 +38,22 @@ export interface IPassPropProps extends PDToFrom {
      */
     asFalsyAttr?: string;
 
+}
+
+export interface PassPropExtProps extends PassPropProps{
+    /**
+    * @prop {string} JSONPath expression
+    * @attr {string} val-filter JSONPath expression
+    */
+    valFilter: string;
+    /**
+     * @prop {string} valFilterScriptId Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.
+     * @attr {string} val-filter-script-id Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.
+     */
+    valFilterScriptId: string;
+    /**
+     * @prop {string} valFilterScriptPropPath Property path from the script tag, where custom filter function can be obtained.
+     * @attr {string} valFilterScriptPropPath Property path from the script tag, where custom filter function can be obtained.
+     */
+    valFilterScriptPropPath: string;
 }

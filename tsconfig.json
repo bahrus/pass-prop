@@ -10,7 +10,9 @@
 	},
 	"files": [
 		"pass-prop.ts",
-		"pass-prop-doc.ts"
+		"p-p.ts",
+		"pass-prop-ext.ts",
+		"p-p-x.ts"
 	]
 
 }

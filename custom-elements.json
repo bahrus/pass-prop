@@ -4,6 +4,1651 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "p-p-x.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PPX",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "p-p-x"
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "expression",
+              "name": "JSONPath",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "valFilterScriptId",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassPropExt"
+          },
+          "tagName": "p-p-x",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "JSONPath expression",
+              "name": "val-filter",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "val-filter-script-id",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PPX",
+          "declaration": {
+            "name": "PPX",
+            "module": "p-p-x.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "p-p-x.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PPX",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "p-p-x"
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "expression",
+              "name": "JSONPath",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "valFilterScriptId",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassPropExt"
+          },
+          "tagName": "p-p-x",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "JSONPath expression",
+              "name": "val-filter",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "val-filter-script-id",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "inheritedFrom": {
+                "name": "PassPropExt",
+                "module": "pass-prop-ext.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PPX",
+          "declaration": {
+            "name": "PPX",
+            "module": "p-p-x.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "p-p.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PP",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "p-p"
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassProp"
+          },
+          "tagName": "p-p",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PP",
+          "declaration": {
+            "name": "PP",
+            "module": "p-p.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "p-p.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PP",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "p-p"
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassProp"
+          },
+          "tagName": "p-p",
+          "customElement": true,
+          "attributes": [
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PP",
+          "declaration": {
+            "name": "PP",
+            "module": "p-p.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "pass-prop-ext.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PassPropExt",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "pass-prop-ext"
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val"
+                }
+              ]
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "expression",
+              "name": "JSONPath",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "valFilterScriptId",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "kind": "field"
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "JSONPath expression",
+              "name": "val-filter"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "val-filter-script-id"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassProp"
+          },
+          "tagName": "pass-prop-ext",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PassPropExt",
+          "declaration": {
+            "name": "PassPropExt",
+            "module": "pass-prop-ext.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "pass-prop-ext.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PassPropExt",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "static": true,
+              "default": "pass-prop-ext"
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "expression",
+              "name": "JSONPath",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "valFilterScriptId",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath",
+              "kind": "field"
+            },
+            {
+              "kind": "field",
+              "name": "propActions",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "self",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "reactor",
+              "type": {
+                "text": "IReactor"
+              },
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "subscribe",
+              "parameters": [
+                {
+                  "name": "self",
+                  "type": {
+                    "text": "PassPropProps"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onPropChange",
+              "parameters": [
+                {
+                  "name": "n",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "propDef",
+                  "type": {
+                    "text": "PropDef"
+                  }
+                },
+                {
+                  "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "fromHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "JSONPath expression",
+              "name": "val-filter"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.",
+              "name": "val-filter-script-id"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Property path from the script tag, where custom filter function can be obtained.",
+              "name": "valFilterScriptPropPath"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from ShadowRoot Host",
+              "name": "from-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr",
+              "inheritedFrom": {
+                "name": "PassProp",
+                "module": "pass-prop.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "PassProp"
+          },
+          "tagName": "pass-prop-ext",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PassPropExt",
+          "declaration": {
+            "name": "PassPropExt",
+            "module": "pass-prop-ext.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "pass-prop.js",
       "declarations": [
         {
@@ -50,6 +1695,15 @@
                 },
                 {
                   "name": "nv"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val"
                 }
               ]
             },
@@ -206,7 +1860,7 @@
                 {
                   "name": "self",
                   "type": {
-                    "text": "IPassPropProps"
+                    "text": "PassPropProps"
                   }
                 }
               ]
@@ -229,6 +1883,18 @@
                 },
                 {
                   "name": "nv",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "filterVal",
+              "parameters": [
+                {
+                  "name": "val",
                   "type": {
                     "text": "any"
                   }
