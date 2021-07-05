@@ -60,6 +60,38 @@
               "description": "Observe property from ShadowRoot Host",
               "name": "fromHost",
               "kind": "field"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field"
             }
           ],
           "attributes": [
@@ -69,6 +101,34 @@
               },
               "description": "Observe property from ShadowRoot Host",
               "name": "from-host"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr"
             }
           ],
           "superclass": {
@@ -182,6 +242,38 @@
               "description": "Observe property from ShadowRoot Host",
               "name": "fromHost",
               "kind": "field"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "fromParent",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "fromParentOrHost",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observeProp",
+              "kind": "field"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "asFalsyAttr",
+              "kind": "field"
             }
           ],
           "attributes": [
@@ -191,6 +283,34 @@
               },
               "description": "Observe property from ShadowRoot Host",
               "name": "from-host"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property from parent element",
+              "name": "from-parent"
+            },
+            {
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Observe property fro parent element if available, otherwise from host.",
+              "name": "from-parent-or-host"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Name of property to observe",
+              "name": "observe-prop"
+            },
+            {
+              "type": {
+                "text": "string"
+              },
+              "description": "Useful for hiding element if property is falsy [TODO]",
+              "name": "as-falsy-attr"
             }
           ],
           "superclass": {

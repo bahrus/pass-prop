@@ -8,6 +8,14 @@ import { MutObs } from 'mut-obs/mut-obs.js';
  * @tag pass-prop
  * @prop {boolean} fromHost  Observe property from ShadowRoot Host
  * @attr {boolean} from-host Observe property from ShadowRoot Host
+ * @prop {boolean} fromParent  Observe property from parent element
+ * @attr {boolean} from-parent Observe property from parent element
+ * @prop {boolean} fromParentOrHost Observe property fro parent element if available, otherwise from host.
+ * @attr {boolean} from-parent-or-host Observe property fro parent element if available, otherwise from host.
+ * @prop {string} observeProp Name of property to observe
+ * @attr {string} observe-prop Name of property to observe
+ * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
+ * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
  */
 export class PassProp extends HTMLElement {
     static is = 'pass-prop';

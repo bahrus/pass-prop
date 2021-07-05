@@ -3,37 +3,38 @@ import {PassProp} from './pass-prop.js';
 export interface IPassPropProps extends PDToFrom {
 
     /**
-     * @prop fromHost {boolean} Observe property from ShadowRoot Host
-     * @attr from-host
+    * @prop {boolean} fromHost  Observe property from ShadowRoot Host
+    * @attr {boolean} from-host Observe property from ShadowRoot Host
      */
     fromHost?: boolean,
     /**
-     * @prop fromParent {boolean} Observe property from parent element
-     * @attr from-parent
+     * @prop {boolean} fromParent  Observe property from parent element
+     * @attr {boolean} from-parent Observe property from parent element
      */
     fromParent?: boolean,
     /**
-     * Observe property fro parent element if available, otherwise from host.
-     * @attr from-parent-or-host
+     *  @prop {boolean} fromParentOrHost Observe property fro parent element if available, otherwise from host.
+     *  @attr {boolean} from-parent-or-host Observe property fro parent element if available, otherwise from host.
      */
     fromParentOrHost?: boolean,
     /**
-     * Search up the DOM Node Tree for an element matching this css selector
-     * @attr from-upsearch
+     * @prop {string} fromUpearch Upsearch up the DOM Node Tree for an element matching this css selector
+     * @attr {string} from-upsearch Upsearch up the DOM Node Tree for an element matching this css selector
      */
     fromUpsearch?: string;
     /**
-     * Name of property to observe
-     * @attr observe-prop
+     * @prop {string} observeProp Name of property to observe
+     * @attr {string} observe-prop Name of property to observe
      */
     observeProp?: string;
     /**
-     * Host to observe.  Normally, this is determined internally.
-     * But it can be passed in.
+     * @prop {Element} hostToObserve Host to observe.  Normally, this is determined internally. But it can be passed in.
+     * @attr {string} host-to-observe Host to observe.  Normally, this is determined internally. But it can be passed in.
      */
     hostToObserve?: Element;
     /**
-     * Useful for hiding element if property is falsy [TODO]
+     * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
+     * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
      */
     asFalsyAttr?: string;
 
