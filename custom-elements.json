@@ -70,6 +70,7 @@
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
               "name": "valFilterScriptPropPath",
+              "default": "_modExport.filter",
               "kind": "field",
               "inheritedFrom": {
                 "name": "PassPropExt",
@@ -248,7 +249,7 @@
                 "text": "string"
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
-              "name": "valFilterScriptPropPath",
+              "name": "val-filter-script-prop-path",
               "inheritedFrom": {
                 "name": "PassPropExt",
                 "module": "pass-prop-ext.ts"
@@ -391,6 +392,7 @@
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
               "name": "valFilterScriptPropPath",
+              "default": "_modExport.filter",
               "kind": "field",
               "inheritedFrom": {
                 "name": "PassPropExt",
@@ -569,7 +571,7 @@
                 "text": "string"
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
-              "name": "valFilterScriptPropPath",
+              "name": "val-filter-script-prop-path",
               "inheritedFrom": {
                 "name": "PassPropExt",
                 "module": "pass-prop-ext.ts"
@@ -1205,6 +1207,7 @@
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
               "name": "valFilterScriptPropPath",
+              "default": "_modExport.filter",
               "kind": "field"
             },
             {
@@ -1365,7 +1368,7 @@
                 "text": "string"
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
-              "name": "valFilterScriptPropPath"
+              "name": "val-filter-script-prop-path"
             },
             {
               "type": {
@@ -1502,6 +1505,7 @@
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
               "name": "valFilterScriptPropPath",
+              "default": "_modExport.filter",
               "kind": "field"
             },
             {
@@ -1662,7 +1666,7 @@
                 "text": "string"
               },
               "description": "Property path from the script tag, where custom filter function can be obtained.",
-              "name": "valFilterScriptPropPath"
+              "name": "val-filter-script-prop-path"
             },
             {
               "type": {

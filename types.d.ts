@@ -13,15 +13,16 @@ export interface PassPropProps extends PDToFrom {
      */
     fromParent?: boolean,
     /**
-     *  @prop {boolean} fromParentOrHost Observe property fro parent element if available, otherwise from host.
+     *  @prop {boolean} fromParentOrHost Observe property from parent element if available, otherwise from host.
      *  @attr {boolean} from-parent-or-host Observe property fro parent element if available, otherwise from host.
      */
     fromParentOrHost?: boolean,
     /**
-     * @prop {string} fromUpearch Upsearch up the DOM Node Tree for an element matching this css selector
-     * @attr {string} from-upsearch Upsearch up the DOM Node Tree for an element matching this css selector
+     * @prop {string} fromUpsearch - Upsearch up the DOM Node Tree for an element matching this css selector
+     * @attr {string} from-upsearch - Upsearch up the DOM Node Tree for an element matching this css selector
      */
     fromUpsearch?: string;
+    fromUpShadowSeach?: string;
     /**
      * @prop {string} observeProp Name of property to observe
      * @attr {string} observe-prop Name of property to observe
@@ -52,8 +53,8 @@ export interface PassPropExtProps extends PassPropProps{
      */
     valFilterScriptId: string;
     /**
-     * @prop {string} valFilterScriptPropPath Property path from the script tag, where custom filter function can be obtained.
-     * @attr {string} valFilterScriptPropPath Property path from the script tag, where custom filter function can be obtained.
+     * @prop {string} [valFilterScriptPropPath=_modExport.filter] - Property path from the script tag, where custom filter function can be obtained.
+     * @attr {string} val-filter-script-prop-path Property path from the script tag, where custom filter function can be obtained.
      */
     valFilterScriptPropPath: string;
 }
