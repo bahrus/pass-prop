@@ -1,7 +1,6 @@
 import {PDToFrom} from 'pass-down/types.js';
 import {PassProp} from './pass-prop.js';
 export interface PassPropProps extends PDToFrom {
-
     /**
     * @prop {boolean} fromHost  Observe property from ShadowRoot Host
     * @attr {boolean} from-host Observe property from ShadowRoot Host
@@ -22,7 +21,12 @@ export interface PassPropProps extends PDToFrom {
      * @attr {string} from-upsearch - Upsearch up the DOM Node Tree for an element matching this css selector
      */
     fromUpsearch?: string;
-    fromUpShadowSeach?: string;
+
+    /**
+     * @prop {string} [fromUpShadowSearch] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
+     * @attr {string} [from-up-shadow-search] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
+     */
+    fromUpShadowSearch?: string;
     /**
      * @prop {string} observeProp Name of property to observe
      * @attr {string} observe-prop Name of property to observe

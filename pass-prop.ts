@@ -2,6 +2,7 @@ import {xc, PropAction, PropDef, PropDefMap, ReactiveSurface, IReactor} from 'xt
 import {structuralClone} from 'xtal-element/lib/structuralClone.js';
 import {passVal} from 'on-to-me/on-to-me.js';
 import {addDefaultMutObs, handleValChange, attachMutationEventHandler} from 'pass-down/pdUtils.js';
+import {upShadowSearch} from 'trans-render/lib/upShadowSearch.js';
 
 import  'mut-obs/mut-obs.js';
 import {MutObs} from 'mut-obs/mut-obs.js';
@@ -15,6 +16,10 @@ import {PassPropProps} from './types.d.js';
  * @attr {boolean} from-parent Observe property from parent element     
  * @prop {boolean} fromParentOrHost Observe property fro parent element if available, otherwise from host.
  * @attr {boolean} from-parent-or-host Observe property fro parent element if available, otherwise from host.
+ * @prop {string} fromUpsearch - Upsearch up the DOM Node Tree for an element matching this css selector
+ * @attr {string} from-upsearch - Upsearch up the DOM Node Tree for an element matching this css selector
+ * @prop {string} [fromUpShadowSearch] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
+ * @attr {string} [from-up-shadow-search] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
  * @prop {string} observeProp Name of property to observe
  * @attr {string} observe-prop Name of property to observe
  * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
@@ -86,6 +91,13 @@ const onFromUpsearch = ({fromUpsearch, self}: P) => {
     }
 };
 
+const onFromUpShadowSearch = ({fromUpShadowSearch, self}: P) => {
+    const up = upShadowSearch(self, fromUpShadowSearch!);
+    if(up !== null){
+        self.hostToObserve = up;
+    }
+};
+
 const onFromParent = ({fromParent, self}: P) => {
     const parent = self.parentElement;
     if(parent !== null){
@@ -127,7 +139,13 @@ const onLastVal = ({lastVal, to, careOf, from, prop, as,  self}: P) => {
 };
 
 const propActions = [
-    onFromRootNodeHost, onHostToObserve, onLastVal, onFromUpsearch, onFromParent, onFromParentOrHost
+    onFromRootNodeHost, 
+    onHostToObserve, 
+    onLastVal, 
+    onFromUpsearch, 
+    onFromParent, 
+    onFromParentOrHost, 
+    onFromUpShadowSearch
 ] as PropAction[];
 
 const baseProp: PropDef = {
@@ -174,6 +192,7 @@ const numProp1: PropDef = {
 const propDefMap: PropDefMap<P> = {
     fromHost: boolProp2,
     fromUpsearch: strProp2,
+    fromUpShadowSearch: strProp2,
     fromParent: boolProp2,
     fromParentOrHost: boolProp2,
     to: strProp1,
