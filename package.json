@@ -29,16 +29,16 @@
   },
   "dependencies": {
     "mut-obs": "0.0.8",
-    "on-to-me": "0.0.23",
-    "pass-down": "0.0.37",
-    "xtal-element": "0.0.402",
+    "on-to-me": "0.0.26",
+    "pass-down": "0.0.53",
+    "xtal-element": "0.0.411",
     "jsonpathesm": "0.0.1",
     "trans-render": "0.0.291"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",
     "xtal-test": "0.0.51",
-    "@custom-elements-manifest/analyzer": "0.4.10"
+    "@custom-elements-manifest/analyzer": "0.4.11"
   },
   "repository": {
     "type": "git",
