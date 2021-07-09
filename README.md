@@ -61,7 +61,6 @@ subscribe(){
 **NB:**  This component appears to somewhat buck recent trends in thought as it relates to best practice flow of data (maybe?  I'm not really sure).  
 
 
-## Reference
+## [API Reference](https://bahrus.github.io/wc-info/cdn-base.html?npmPackage=pass-prop)
 
-WIP
 
