@@ -32,7 +32,7 @@
     "on-to-me": "0.0.26",
     "pass-down": "0.0.55",
     "xtal-element": "0.0.413",
-    "jsonpathesm": "0.0.1",
+    "jsonpathesm": "0.0.2",
     "trans-render": "0.0.291"
   },
   "devDependencies": {
