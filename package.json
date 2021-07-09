@@ -30,8 +30,8 @@
   "dependencies": {
     "mut-obs": "0.0.8",
     "on-to-me": "0.0.26",
-    "pass-down": "0.0.53",
-    "xtal-element": "0.0.411",
+    "pass-down": "0.0.55",
+    "xtal-element": "0.0.413",
     "jsonpathesm": "0.0.1",
     "trans-render": "0.0.291"
   },
