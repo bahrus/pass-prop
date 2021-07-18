@@ -2,8 +2,8 @@
   "name": "pass-prop",
   "version": "0.0.19",
   "keywords": [
-    "Web Components",
-    "Custom Elements"
+    "web-components",
+    "custom-elements"
   ],
   "description": "Web component that passes from a higher component down",
   "main": "pass-prop.js",
