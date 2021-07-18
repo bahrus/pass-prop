@@ -5,6 +5,7 @@ import {jsonPath} from 'jsonpathesm/JSONPath.js';
 
 /**
 * @tag pass-prop-ext
+* @element pass-prop-ext
 * @prop {string} JSONPath expression
 * @attr {string} val-filter JSONPath expression
 * @prop {string} valFilterScriptId Id within the ShadowDOM Realm of p-d-x of a script tag. The script tag is expected to have a property path where a custom filter function is specified. This custom filter function is applied to the value.
