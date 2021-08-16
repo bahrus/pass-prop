@@ -33,7 +33,7 @@
     "pass-down": "0.0.80",
     "xtal-element": "0.0.422",
     "jsonpathesm": "0.0.2",
-    "trans-render": "0.0.300"
+    "trans-render": "0.0.301"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",

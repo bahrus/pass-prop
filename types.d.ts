@@ -45,8 +45,11 @@ export interface PassPropProps extends PDToFrom {
 
 }
 
+type pp = IPassProp;
 export interface IPassProp extends PassPropProps {
-    
+    onFromRootNodeHost(self: pp): void;
+    onFromUpsearch(self: pp): void;
+    onFromUpShadowSearch(self: pp): void;
 }
 
 export interface PassPropExtProps extends PassPropProps{
