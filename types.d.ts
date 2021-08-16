@@ -1,5 +1,5 @@
 import {PDToFrom} from 'pass-down/types.js';
-import {PassProp} from './pass-prop.js';
+
 export interface PassPropProps extends PDToFrom {
     /**
     * @prop {boolean} fromHost  Observe property from ShadowRoot Host
@@ -43,6 +43,10 @@ export interface PassPropProps extends PDToFrom {
      */
     asFalsyAttr?: string;
 
+}
+
+export interface IPassProp extends PassPropProps {
+    
 }
 
 export interface PassPropExtProps extends PassPropProps{
