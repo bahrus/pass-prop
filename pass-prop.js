@@ -2,7 +2,30 @@ import { define } from 'trans-render/lib/define.js';
 import { structuralClone } from 'trans-render/lib/structuralClone.js';
 import { upSearch } from 'trans-render/lib/upSearch.js';
 import { upShadowSearch } from 'trans-render/lib/upShadowSearch.js';
-const PassPropMixin = (baseClass) => class extends baseClass {
+import { PDMixin } from 'pass-down/PDMixin.js';
+import { addDefaultMutObs } from './node_modules/pass-down/PDMixin.js';
+/**
+ * @tag pass-prop
+ * @prop {boolean} fromHost  Observe property from ShadowRoot Host
+ * @attr {boolean} from-host Observe property from ShadowRoot Host
+ * @prop {boolean} fromParent  Observe property from parent element
+ * @attr {boolean} from-parent Observe property from parent element
+ * @prop {boolean} fromParentOrHost Observe property fro parent element if available, otherwise from host.
+ * @attr {boolean} from-parent-or-host Observe property fro parent element if available, otherwise from host.
+ * @prop {string} fromUpsearch - Upsearch up the DOM Node Tree for an element matching this css selector
+ * @attr {string} from-upsearch - Upsearch up the DOM Node Tree for an element matching this css selector
+ * @prop {string} [fromUpShadowSearch] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
+ * @attr {string} [from-up-shadow-search] - Search by ID within the Shadow DOM realm of the element, or search up the ShadowDOM hierarchy, if the path starts with paths like ../../myElementId
+ * @prop {string} observeProp Name of property to observe
+ * @attr {string} observe-prop Name of property to observe
+ * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
+ * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
+ */
+class PassPropCore extends HTMLElement {
+    connectedCallback() {
+        this.style.display = 'none';
+        addDefaultMutObs(this);
+    }
     onFromRootNodeHost(self) {
         const rn = self.getRootNode();
         if (rn !== undefined) {
@@ -43,10 +66,25 @@ const PassPropMixin = (baseClass) => class extends baseClass {
         });
     }
     filterVal(val) { return val; }
+}
+;
+const stringProp = {
+    type: 'String'
+};
+const nonParseable = {
+    parse: false
 };
 export const PassProp = define({
     config: {
         tagName: 'pass-prop',
+        propDefaults: {
+            fromHost: false,
+            fromParent: false,
+            fromParentOrHost: false,
+        },
+        propInfo: {
+            fromUpsearch: stringProp, hostToObserve: nonParseable,
+        },
         actions: [
             {
                 do: 'onFromRootNodeHost',
@@ -75,7 +113,8 @@ export const PassProp = define({
             }
         ]
     },
-    mixins: [PassPropMixin]
+    superclass: PassPropCore,
+    mixins: [PDMixin]
 });
 function setVal(self, currentVal) {
     if (currentVal !== undefined) {
