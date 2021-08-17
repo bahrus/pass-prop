@@ -50,6 +50,11 @@ export interface IPassProp extends PassPropProps {
     onFromRootNodeHost(self: pp): void;
     onFromUpsearch(self: pp): void;
     onFromUpShadowSearch(self: pp): void;
+    onFromParent(self: pp): void;
+    onFromParentOrHost(self: pp): void;
+    onHostToObserve(self: pp): void;
+    subscribe(self: pp): void;
+    filterVal(val: any): any;
 }
 
 export interface PassPropExtProps extends PassPropProps{
