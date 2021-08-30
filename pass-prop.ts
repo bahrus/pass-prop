@@ -6,7 +6,7 @@ import {upShadowSearch} from 'trans-render/lib/upShadowSearch.js';
 import {PDMixin} from 'pass-down/PDMixin.js';
 import { addDefaultMutObs } from './node_modules/pass-down/PDMixin.js';
 
-
+export const ce = new CE<PassPropProps, PassPropActions>();
 export class PassPropCore extends HTMLElement implements PassPropActions{
 
     connectedCallback(){
@@ -77,7 +77,7 @@ const nonParseable: PropInfo = {
 };
 
 
-export const ce = new CE<PassPropProps, PassPropActions>({
+ce.def({
     config:{
         tagName: 'pass-prop',
         propDefaults:{
@@ -144,7 +144,7 @@ function setVal(self: PassPropCore, currentVal: any){
  * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
  * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
  */
-export const PassProp = ce.classDef;
+export const PassProp = ce.classDef!;
 
 declare global {
     interface HTMLElementTagNameMap {

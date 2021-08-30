@@ -4,6 +4,7 @@ import { upSearch } from 'trans-render/lib/upSearch.js';
 import { upShadowSearch } from 'trans-render/lib/upShadowSearch.js';
 import { PDMixin } from 'pass-down/PDMixin.js';
 import { addDefaultMutObs } from './node_modules/pass-down/PDMixin.js';
+export const ce = new CE();
 export class PassPropCore extends HTMLElement {
     connectedCallback() {
         addDefaultMutObs(this);
@@ -64,7 +65,7 @@ const stringProp = {
 const nonParseable = {
     parse: false
 };
-export const ce = new CE({
+ce.def({
     config: {
         tagName: 'pass-prop',
         propDefaults: {
