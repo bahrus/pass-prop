@@ -36,7 +36,7 @@ A component like pass-prop may be just enough to allow a web component to remain
 
 ## Assumptions
 
-pass-prop assumptions that property changes of interest will be paired with dispatched events.  It assumes that the name of the event will be the lisp-cased name of the property, followed by a "-changed.".  
+pass-prop assumptions that property changes of interest will be paired with dispatched events.  It assumes that the name of the event will be the lisp-cased name of the property, followed by a "-changed.".  However, we can specify a specific event name to listen to via property/attribute propChangeEventName/prop-change-event-name.
 
 Some checklists of good web component design advocate not firing events associated with public properties where the value is passed in.  However, it does fit a useful purpose, in conjunction with a web component like pass-prop.  A good comprise might be to automatically "echo" the public property to a less advertised "doppel"-prop.
 
