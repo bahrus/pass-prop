@@ -4,9 +4,10 @@ import {structuralClone} from 'trans-render/lib/structuralClone.js';
 import {upSearch} from 'trans-render/lib/upSearch.js';
 import {upShadowSearch} from 'trans-render/lib/upShadowSearch.js';
 import {PDMixin} from 'pass-down/PDMixin.js';
+import { PDMixinActions } from 'pass-down/types';
 import { addDefaultMutObs } from './node_modules/pass-down/PDMixin.js';
 
-export const ce = new CE<PassPropProps, PassPropActions>();
+export const ce = new CE<PassPropProps, PassPropActions & PDMixinActions>();
 export class PassPropCore extends HTMLElement implements PassPropActions{
 
     connectedCallback(){
@@ -42,8 +43,7 @@ export class PassPropCore extends HTMLElement implements PassPropActions{
     }
     onHostToObserve(self: this){
         const {hostToObserve, observeProp} = self;
-        const currentVal = (<any>hostToObserve!)[observeProp!];
-        setVal(self, currentVal);
+        this.getAndPassOnValFromHost();
         self.subscribe(self);        
     }
 
@@ -57,6 +57,10 @@ export class PassPropCore extends HTMLElement implements PassPropActions{
     filterVal(val: any){return val;}
 
     handlePropChange = (e: Event) => {
+        this.getAndPassOnValFromHost();
+    }
+
+    getAndPassOnValFromHost(){
         const currentVal = (<any>this.hostToObserve!)[this.observeProp!];
         setVal(this, currentVal);
     }
@@ -106,6 +110,9 @@ ce.def({
             }, 
             onHostToObserve: {
                 ifAllOf: ['hostToObserve', 'observeProp'],
+            },
+            handleValChange:{
+                ifKeyIn: ['lastVal'],
             }
         },
         style:{

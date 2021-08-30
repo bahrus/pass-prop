@@ -38,8 +38,7 @@ export class PassPropCore extends HTMLElement {
     }
     onHostToObserve(self) {
         const { hostToObserve, observeProp } = self;
-        const currentVal = hostToObserve[observeProp];
-        setVal(self, currentVal);
+        this.getAndPassOnValFromHost();
         self.subscribe(self);
     }
     get eventName() {
@@ -50,9 +49,12 @@ export class PassPropCore extends HTMLElement {
     }
     filterVal(val) { return val; }
     handlePropChange = (e) => {
+        this.getAndPassOnValFromHost();
+    };
+    getAndPassOnValFromHost() {
         const currentVal = this.hostToObserve[this.observeProp];
         setVal(this, currentVal);
-    };
+    }
     disconnectedCallback() {
         this.hostToObserve?.removeEventListener(this.eventName, this.handlePropChange);
         this.hostToObserve = undefined;
@@ -94,6 +96,9 @@ ce.def({
             },
             onHostToObserve: {
                 ifAllOf: ['hostToObserve', 'observeProp'],
+            },
+            handleValChange: {
+                ifKeyIn: ['lastVal'],
             }
         },
         style: {
