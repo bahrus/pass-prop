@@ -1,4 +1,4 @@
-import { xc } from 'xtal-element/lib/XtalCore.js';
+import { def } from 'trans-render/lib/def.js';
 import { PassProp } from './pass-prop.js';
 /**
  * @tag p-p
@@ -6,4 +6,4 @@ import { PassProp } from './pass-prop.js';
 export class PP extends PassProp {
     static is = 'p-p';
 }
-xc.define(PP);
+def(PP);

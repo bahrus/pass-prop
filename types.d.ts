@@ -46,15 +46,15 @@ export interface PassPropProps extends PDToFrom {
 
 }
 
-type pp = IPassProp;
-export interface IPassProp extends PassPropProps {
-    onFromRootNodeHost(self: pp): void;
-    onFromUpsearch(self: pp): void;
-    onFromUpShadowSearch(self: pp): void;
-    onFromParent(self: pp): void;
-    onFromParentOrHost(self: pp): void;
-    onHostToObserve(self: pp): void;
-    subscribe(self: pp): void;
+//type pp = IPassPropActions;
+export interface PassPropActions {
+    onFromRootNodeHost(self: this): void;
+    onFromUpsearch(self: this): void;
+    onFromUpShadowSearch(self: this): void;
+    onFromParent(self: this): void;
+    onFromParentOrHost(self: this): void;
+    onHostToObserve(self: this): void;
+    subscribe(self: this): void;
     filterVal(val: any): any;
 }
 

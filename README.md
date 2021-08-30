@@ -6,7 +6,6 @@
 
 pass-prop is a web component that passes a prop from a higher component to downstream siblings.  It shares much common code and syntax with other components of the [p-et-alia](https://github.com/bahrus/p-et-alia) framework of components, but, like the other components in that framework, pass-prop can serve a useful purpose as a standalone component.  The other components in the framework have a name that is globally unique (based on npm package name uniqueness constraints), but also have shorter "nicknames" which might clash with other libraries.  In the case of pass-prop, that nickname is "p-p".  
 
-However, unlike the other components in the p-et-alia framework, pass-prop has a significant limitation as to what other components it is compatible with. More on that below. 
 
 ## Syntax
 
@@ -37,28 +36,10 @@ A component like pass-prop may be just enough to allow a web component to remain
 
 ## Assumptions
 
-pass-prop assumes that it doesn't make sense for all property changes of a web component to emit a corresponding event.
+pass-prop assumptions that property changes of interest will be paired with dispatched events.  It assumes that the name of the event will be the lisp-cased name of the property, followed by a "-changed.".  
 
-So the only way to pass properties down, then, is for pass-prop to "subscribe" to property changes.  However, unlike subscribing to events, there is no standard way of subscribing to property changes.
+Some checklists of good web component design advocate not firing events associated with public properties where the value is passed in.  However, it does fit a useful purpose, in conjunction with a web component like pass-prop.  A good comprise might be to automatically "echo" the public property to a less advertised "doppel"-prop.
 
-pass-prop is thus currently tightly coupled with custom elements that follow the reactivity approach of [xtal-element](https://github.com/bahrus/xtal-element).  In particular, pass-prop assumes / hard-codes (for now) that the components it is binding with supports the following signature:
-
-```TypeScript
-hostToObserve.reactor.subscribe(propsToObserve: Set<string>, callback: (reactor: any) => void));
-```
-
-To work with another web component library, which lacks this signature (i.e. all the rest), but provides some other way of subscribing to property changes, you will need to extend pass-prop, and override the method subscribe:
-
-```TypeScript
-subscribe(){
-    (<ReactiveSurface>this.hostToObserve!).reactor!.subscribe(new Set([this.observeProp!]), rs => {
-        const currentVal = (<any>this.hostToObserve!)[this.observeProp!];
-        setVal(this, currentVal);
-    });
-}
-```
-
-**NB:**  This component appears to somewhat buck recent trends in thought as it relates to best practice flow of data (maybe?  I'm not really sure).  
 
 
 ## [API Reference](https://bahrus.github.io/wc-info/cdn-base.html?npmPackage=pass-prop)

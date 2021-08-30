@@ -1,12 +1,11 @@
-import { define } from 'trans-render/lib/define.js';
+import { CE } from 'trans-render/lib/CE.js';
 import { structuralClone } from 'trans-render/lib/structuralClone.js';
 import { upSearch } from 'trans-render/lib/upSearch.js';
 import { upShadowSearch } from 'trans-render/lib/upShadowSearch.js';
 import { PDMixin } from 'pass-down/PDMixin.js';
 import { addDefaultMutObs } from './node_modules/pass-down/PDMixin.js';
-class PassPropCore extends HTMLElement {
+export class PassPropCore extends HTMLElement {
     connectedCallback() {
-        this.style.display = 'none';
         addDefaultMutObs(this);
     }
     onFromRootNodeHost(self) {
@@ -42,13 +41,21 @@ class PassPropCore extends HTMLElement {
         setVal(self, currentVal);
         self.subscribe(self);
     }
-    subscribe(self) {
-        self.hostToObserve.subscribe(new Set([self.observeProp]), (rs) => {
-            const currentVal = self.hostToObserve[self.observeProp];
-            setVal(self, currentVal);
-        });
+    get eventName() {
+        return ce.toLisp(this.observeProp) + '-changed';
+    }
+    subscribe({ observeProp }) {
+        this.hostToObserve.addEventListener(this.eventName, this.handlePropChange);
     }
     filterVal(val) { return val; }
+    handlePropChange = (e) => {
+        const currentVal = this.hostToObserve[this.observeProp];
+        setVal(this, currentVal);
+    };
+    disconnectedCallback() {
+        this.hostToObserve?.removeEventListener(this.eventName, this.handlePropChange);
+        this.hostToObserve = undefined;
+    }
 }
 ;
 const stringProp = {
@@ -57,8 +64,57 @@ const stringProp = {
 const nonParseable = {
     parse: false
 };
+export const ce = new CE({
+    config: {
+        tagName: 'pass-prop',
+        propDefaults: {
+            fromHost: false,
+            fromParent: false,
+            fromParentOrHost: false,
+        },
+        propInfo: {
+            fromUpsearch: stringProp, hostToObserve: nonParseable,
+        },
+        actions: {
+            onFromRootNodeHost: {
+                ifAllOf: ['fromHost'],
+            },
+            onFromUpsearch: {
+                ifAllOf: ['fromUpsearch'],
+            },
+            onFromUpShadowSearch: {
+                ifAllOf: ['fromUpShadowSearch'],
+            },
+            onFromParent: {
+                ifAllOf: ['fromParent'],
+            },
+            onFromParentOrHost: {
+                ifAllOf: ['fromParentOrHost'],
+            },
+            onHostToObserve: {
+                ifAllOf: ['hostToObserve', 'observeProp'],
+            }
+        },
+        style: {
+            display: 'none',
+        }
+    },
+    superclass: PassPropCore,
+    mixins: [PDMixin]
+});
+function setVal(self, currentVal) {
+    if (currentVal !== undefined) {
+        if (typeof currentVal === 'object') {
+            self.lastVal = self.filterVal(structuralClone(currentVal));
+        }
+        else {
+            self.lastVal = self.filterVal(currentVal);
+        }
+    }
+}
 /**
  * @tag pass-prop
+ * @element pass-prop
  * @prop {boolean} fromHost  Observe property from ShadowRoot Host
  * @attr {boolean} from-host Observe property from ShadowRoot Host
  * @prop {boolean} fromParent  Observe property from parent element
@@ -74,55 +130,4 @@ const nonParseable = {
  * @prop {string} asFalsyAttr Useful for hiding element if property is falsy [TODO]
  * @attr {string} as-falsy-attr Useful for hiding element if property is falsy [TODO]
  */
-export const PassProp = define({
-    config: {
-        tagName: 'pass-prop',
-        propDefaults: {
-            fromHost: false,
-            fromParent: false,
-            fromParentOrHost: false,
-        },
-        propInfo: {
-            fromUpsearch: stringProp, hostToObserve: nonParseable,
-        },
-        actions: [
-            {
-                do: 'onFromRootNodeHost',
-                upon: ['fromHost'],
-                riff: '"'
-            }, {
-                do: 'onFromUpsearch',
-                upon: ['fromUpsearch'],
-                riff: '"'
-            }, {
-                do: 'onFromUpShadowSearch',
-                upon: ['fromUpShadowSearch'],
-                riff: '"'
-            }, {
-                do: 'onFromParent',
-                upon: ['fromParent'],
-                riff: '"'
-            }, {
-                do: 'onFromParentOrHost',
-                upon: ['fromParentOrHost'],
-                riff: '"'
-            }, {
-                do: 'onHostToObserve',
-                upon: ['hostToObserve', 'observeProp'],
-                riff: '"'
-            }
-        ]
-    },
-    superclass: PassPropCore,
-    mixins: [PDMixin]
-});
-function setVal(self, currentVal) {
-    if (currentVal !== undefined) {
-        if (typeof currentVal === 'object') {
-            self.lastVal = self.filterVal(structuralClone(currentVal));
-        }
-        else {
-            self.lastVal = self.filterVal(currentVal);
-        }
-    }
-}
+export const PassProp = ce.classDef;
