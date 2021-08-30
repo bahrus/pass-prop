@@ -88,9 +88,13 @@ ce.def({
             fromHost: false,
             fromParent: false,
             fromParentOrHost: false,
+            m: Infinity,
+            debug: false,
+            log: false
         },
         propInfo:{
-            fromUpsearch: stringProp, hostToObserve: nonParseable,
+            fromUpsearch: stringProp, hostToObserve: nonParseable, to: stringProp,
+            careOf: stringProp, from: stringProp, as: stringProp,
         },
         actions:{
             onFromRootNodeHost: {
