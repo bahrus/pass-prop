@@ -42,7 +42,7 @@ export class PassPropCore extends HTMLElement {
         self.subscribe(self);
     }
     get eventName() {
-        return ce.toLisp(this.observeProp) + '-changed';
+        return this.propChangeEventName || ce.toLisp(this.observeProp) + '-changed';
     }
     subscribe({ observeProp }) {
         this.hostToObserve.addEventListener(this.eventName, this.handlePropChange);
@@ -80,7 +80,7 @@ ce.def({
         },
         propInfo: {
             fromUpsearch: stringProp, hostToObserve: nonParseable, to: stringProp,
-            careOf: stringProp, from: stringProp, as: stringProp,
+            careOf: stringProp, from: stringProp, as: stringProp, propChangeEventName: stringProp,
         },
         actions: {
             onFromRootNodeHost: {

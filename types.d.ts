@@ -43,6 +43,7 @@ export interface PassPropProps extends PDToFrom {
      */
     asFalsyAttr?: string;
 
+    propChangeEventName?: string;
 
 }
 

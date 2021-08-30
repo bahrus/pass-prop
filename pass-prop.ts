@@ -48,7 +48,7 @@ export class PassPropCore extends HTMLElement implements PassPropActions{
     }
 
     get eventName(){
-        return ce.toLisp(this.observeProp!) + '-changed';
+        return this.propChangeEventName || ce.toLisp(this.observeProp!) + '-changed';
     }
 
     subscribe({observeProp}: this){
@@ -94,7 +94,7 @@ ce.def({
         },
         propInfo:{
             fromUpsearch: stringProp, hostToObserve: nonParseable, to: stringProp,
-            careOf: stringProp, from: stringProp, as: stringProp,
+            careOf: stringProp, from: stringProp, as: stringProp, propChangeEventName: stringProp,
         },
         actions:{
             onFromRootNodeHost: {
