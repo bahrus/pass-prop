@@ -30,15 +30,15 @@
   "dependencies": {
     "mut-obs": "0.0.10",
     "on-to-me": "0.0.35",
-    "pass-down": "0.0.90",
-    "xtal-element": "0.0.437",
+    "pass-down": "0.0.104",
+    "xtal-element": "0.0.441",
     "jsonpathesm": "0.0.2",
-    "trans-render": "0.0.357"
+    "trans-render": "0.0.388"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",
     "xtal-test": "0.0.51",
-    "@custom-elements-manifest/analyzer": "0.5.2"
+    "@custom-elements-manifest/analyzer": "0.5.3"
   },
   "repository": {
     "type": "git",
