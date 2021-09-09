@@ -3,8 +3,7 @@ import {def} from 'trans-render/lib/def.js';
 export class PassProp extends PassDown{
     static is = 'pass-prop';
     attach(elementToObserve: Element, {on, handleEvent}: this){
-        const ctor = Object.getPrototypeOf(elementToObserve.constructor);
-        const prop = Object.getOwnPropertyDescriptor(ctor.prototype, on!)!;
+        const prop = Object.getOwnPropertyDescriptor(elementToObserve.constructor.prototype, on!)!;
         const setter = prop.set!;
         const getter = prop.get!;
         Object.defineProperty(elementToObserve, on!, {
@@ -22,7 +21,7 @@ export class PassProp extends PassDown{
             },
             enumerable: true,
             configurable: true,
-        })        
+        });        
     }
 }
 
