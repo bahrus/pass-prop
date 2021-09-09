@@ -4,15 +4,13 @@ export class PassProp extends PassDown{
     static is = 'pass-prop';
     attach(elementToObserve: Element, {on, handleEvent}: this){
         const prop = Object.getOwnPropertyDescriptor(elementToObserve.constructor.prototype, on!)!;
-        const setter = prop.set!;
-        const getter = prop.get!;
+        const setter = prop.set!.bind(elementToObserve);
+        const getter = prop.get!.bind(elementToObserve);
         Object.defineProperty(elementToObserve, on!, {
             get(){
-                getter.bind(this);
-                return getter()
+                return getter();
             },
             set(nv){
-                setter.bind(this);
                 setter(nv);
                 const event = {
                     target: this
