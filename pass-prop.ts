@@ -4,7 +4,7 @@ export class PassProp extends PassDown{
     static is = 'pass-prop';
     onFromProp(initVal: string){
         if(this.observeHost) return initVal;
-        return (<any>super).onFromProp(initVal);
+        return super.onFromProp(initVal);
     }
     attach(elementToObserve: Element, {on, handleEvent}: this){
         let prop = Object.getOwnPropertyDescriptor(elementToObserve, on!);

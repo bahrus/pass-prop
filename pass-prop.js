@@ -5,7 +5,7 @@ export class PassProp extends PassDown {
     onFromProp(initVal) {
         if (this.observeHost)
             return initVal;
-        return super..onFromProp(initVal);
+        return super.onFromProp(initVal);
     }
     attach(elementToObserve, { on, handleEvent }) {
         let prop = Object.getOwnPropertyDescriptor(elementToObserve, on);
