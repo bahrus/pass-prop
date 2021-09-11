@@ -2,6 +2,10 @@ import {PassDown} from 'pass-down/pass-down.js';
 import {def} from 'trans-render/lib/def.js';
 export class PassProp extends PassDown{
     static is = 'pass-prop';
+    onFromProp(initVal: string){
+        if(this.observeHost) return initVal;
+        return (<any>super).onFromProp(initVal);
+    }
     attach(elementToObserve: Element, {on, handleEvent}: this){
         let prop = Object.getOwnPropertyDescriptor(elementToObserve, on!);
         if(prop === undefined){

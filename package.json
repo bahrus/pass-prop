@@ -30,10 +30,9 @@
   "dependencies": {
     "mut-obs": "0.0.10",
     "on-to-me": "0.0.35",
-    "pass-down": "0.0.104",
-    "xtal-element": "0.0.441",
+    "pass-down": "0.0.107",
     "jsonpathesm": "0.0.2",
-    "trans-render": "0.0.388"
+    "trans-render": "0.0.396"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",
