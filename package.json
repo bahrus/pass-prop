@@ -28,11 +28,8 @@
     "doc": "custom-elements-manifest analyze"
   },
   "dependencies": {
-    "mut-obs": "0.0.10",
-    "on-to-me": "0.0.35",
-    "pass-down": "0.0.107",
-    "jsonpathesm": "0.0.2",
-    "trans-render": "0.0.396"
+    "pass-down": "0.0.109",
+    "trans-render": "0.0.406"
   },
   "devDependencies": {
     "@skypack/package-check": "0.2.2",
