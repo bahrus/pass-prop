@@ -3,8 +3,7 @@ import {def} from 'trans-render/lib/def.js';
 export class PassProp extends PassDown{
     static is = 'pass-prop';
     onFromProp(initVal: string){
-        if(this.observeHost) return initVal;
-        return super.onFromProp(initVal);
+        return initVal;
     }
     attach(elementToObserve: Element, {on, handleEvent}: this){
         let prop = Object.getOwnPropertyDescriptor(elementToObserve, on!);
