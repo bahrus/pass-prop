@@ -6,9 +6,15 @@ export class PassProp extends PassDown {
         return initVal;
     }
     attach(elementToObserve, { on, handleEvent }) {
-        let prop = Object.getOwnPropertyDescriptor(elementToObserve, on);
+        let proto = elementToObserve;
+        let prop = Object.getOwnPropertyDescriptor(proto, on);
+        while (proto && !prop) {
+            proto = Object.getPrototypeOf(proto);
+            prop = Object.getOwnPropertyDescriptor(proto, on);
+        }
+        //let prop = Object.getOwnPropertyDescriptor(elementToObserve, on!);
         if (prop === undefined) {
-            prop = Object.getOwnPropertyDescriptor(elementToObserve.constructor.prototype, on);
+            throw { elementToObserve, on, message: "Can't find property." };
         }
         const setter = prop.set.bind(elementToObserve);
         const getter = prop.get.bind(elementToObserve);
